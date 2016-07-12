@@ -1,5 +1,6 @@
 FROM qnib/alpn-jdk8
 
+
 ENV JENKINS_HOME=/home/jenkins/ \
     JENKINS_VER=2.13
 RUN mkdir -p /opt/jenkins/lib ${JENKINS_HOME}/plugins/ \
@@ -12,5 +13,5 @@ RUN cd ${JENKINS_HOME}/plugins/ \
  && wget -q http://updates.jenkins-ci.org/latest/github-branch-source.hpi \
  && wget -q http://updates.jenkins-ci.org/latest/github-pullrequest.hpi \
  && wget -q http://updates.jenkins-ci.org/latest/github.hpi \
- && wget -q http://updates.jenkins-ci.org/latest/graphiteIntegrator.hpi 
+ && wget -q http://updates.jenkins-ci.org/latest/graphiteIntegrator.hpi
 RUN apk --no-cache add openssh
